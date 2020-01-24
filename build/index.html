@@ -48,8 +48,9 @@
             <h3>{{ textSearch }} (длина: {{ textSearch.length }})</h3>
             <!-- директива v-model используется для двунаправленного связывния данных.-->
             <input type="text" v-model="textSearch">
-            <button type="button" @click="getCities()">Получить хештеги</button>
-            <ul>
+            <button type="button" @click="getCities()">Получить города</button>
+            <button type="button" @click="getHashtags()">Получить хештеги</button>
+			<ul>
                 <li v-for="hashtag in hashtags">{{ hashtag }}</li>
             </ul>
             <ul>
