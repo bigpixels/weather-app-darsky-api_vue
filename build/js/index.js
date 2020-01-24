@@ -287,9 +287,9 @@ function initGoogleAPI() {
 
 insertGoogleScript();
 
-window.addEventListener('load', function () {
-    let vm = new Vue ({
-		el: '#vue',
+window.onload = function () {
+	let vm = new Vue ({
+		el: '#app',
 		data: {
 			hashtags: [],
 			cities: [],
@@ -326,4 +326,5 @@ window.addEventListener('load', function () {
 			}
 		}
 	});	
-})
+}
+    

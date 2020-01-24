@@ -6,8 +6,7 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,500,700">
-		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<link rel="stylesheet" href="https://rawgit.com/marvelapp/devices.css/master/assets/devices.min.css">
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 
@@ -45,8 +44,23 @@
 		</div>
 		<!-- /END MEAT AND TATERS OF APP -->
 
+		<div id="vue-3">
+            <h3>{{ textSearch }} (длина: {{ textSearch.length }})</h3>
+            <!-- директива v-model используется для двунаправленного связывния данных.-->
+            <input type="text" v-model="textSearch">
+            <button type="button" @click="getCities()">Получить хештеги</button>
+            <ul>
+                <li v-for="hashtag in hashtags">{{ hashtag }}</li>
+            </ul>
+            <ul>
+                <li v-for="city in cities">{{ city.region }}: {{ city.city }}</li>
+            </ul>
+        </div>
+
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 		<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
 		<script src='https://cdnjs.cloudflare.com/ajax/libs/skycons/1396634940/skycons.min.js'></script>
-		<script src="js/index.js"></script>
+		<script src="js/index.js" defer></script>
 	</body>
 </html>
